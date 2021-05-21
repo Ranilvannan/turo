@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container" style="margin-top:20px; margin-bottom:20px;">
+	<div class="row">
+		<div class="col-sm-7 article pt-4">
+			<table class="info-data">
+				<tr>
+					<th>Title</th>
+				</tr>
+				{% for record in info %}
+				<tr>
+					<td>{{ record.title }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}
