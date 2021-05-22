@@ -10,37 +10,31 @@
 			<form action="" method="post" role="form">
 				<div class="form-group">
 
-					<label for="create_date">Create Date:</label>
-					<input type="date" class="form-control" id="create_date" name="create_date" value="{{form.create_date.data}}">
-
-					<label for="write_date">Write Date:</label>
-					<input type="date" class="form-control" id="write_date" name="write_date">
-
 					<label for="sequence">Sequence:</label>
 					<input type="text" class="form-control" id="sequence" name="sequence" placeholder="Sequence.." value="{{form.sequence.data}}">
 
 					<label for="passkey">Passkey:</label>
-					<input type="text" class="form-control" id="passkey" name="passkey" placeholder="Passkey..">
+					<input type="text" class="form-control" id="passkey" name="passkey" placeholder="Passkey.." value="{{form.passkey.data}}">
 
 					<label for="url">URL:</label>
-					<input type="text" class="form-control" id="url" name="url" placeholder="URL..">
+					<input type="text" class="form-control" id="url" name="url" placeholder="URL.." value="{{form.url.data}}">
 
 					<label for="title">Title:</label>
-					<input type="text" class="form-control" id="title" name="title" placeholder="Title..">
+					<input type="text" class="form-control" id="title" name="title" placeholder="Title.." value="{{form.title.data}}">
 
 					<div class="form-group">
 						<label for="description">Description:</label>
-						<textarea class="form-control" rows="5" id="description" name="description" placeholder="Description.."></textarea>
+						<textarea class="form-control" rows="5" id="description" name="description" placeholder="Description..">{{form.description.data}}</textarea>
 					</div>
 
 					<div class="form-group">
 						<label for="preview">Preview:</label>
-						<textarea class="form-control" rows="5" id="preview" name="preview" placeholder="HTML Preview.."></textarea>
+						<textarea class="form-control" rows="5" id="preview" name="preview" placeholder="HTML Preview..">{{form.preview.data}}</textarea>
 					</div>
 
 					<div class="form-group">
 						<label for="content">Content:</label>
-						<textarea class="form-control" rows="5" id="content" name="content" placeholder="HTML Content.."></textarea>
+						<textarea class="form-control" rows="5" id="content" name="content" placeholder="HTML Content..">{{form.content.data}}</textarea>
 					</div>
 
 				</div>

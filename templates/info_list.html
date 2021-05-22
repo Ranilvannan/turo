@@ -4,12 +4,21 @@
 <div class="container" style="margin-top:20px; margin-bottom:20px;">
 	<div class="row">
 		<div class="col-sm-7 article pt-4">
+			<button class="btmo btmos" onclick="location.href='{{ url_for('info_create') }}'">Create</button>
 			<table class="info-data">
 				<tr>
+					<th>sequence</th>
+					<th>Create Date</th>
+					<th>Write Date</th>
+					<th>URL</th>
 					<th>Title</th>
 				</tr>
 				{% for record in info %}
-				<tr>
+				<tr onclick="location.href='{{ url_for('info_edit', record_id=record.id) }}'">
+					<td>{{ record.sequence }}</td>
+					<td>{{ record.create_date }}</td>
+					<td>{{ record.write_date }}</td>
+					<td>{{ record.url }}</td>
 					<td>{{ record.title }}</td>
 				</tr>
 				{% endfor %}

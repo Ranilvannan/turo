@@ -1,6 +1,7 @@
 from flask import Flask, request, flash, redirect, url_for, render_template
 from forms import InfoForm
 from models import db, Information
+from datetime import datetime
 
 
 app = Flask(__name__)
@@ -25,18 +26,16 @@ def info_list():
     return render_template('info_list.html', info=info)
 
 
-@app.route('/info_update', methods=['GET', 'POST'])
-def info_update():
+@app.route('/info/create', methods=['GET', 'POST'])
+def info_create():
     form = InfoForm(request.form)
-    print(dir(form))
-    print(form.data)
     if request.method == 'POST' and form.validate():
         passkey = form.passkey.data
 
         if passkey == "123":
             info = Information(
-                create_date=form.create_date.data,
-                write_date=form.write_date.data,
+                create_date=datetime.now(),
+                write_date=datetime.now(),
                 sequence=form.sequence.data,
                 passkey=form.passkey.data,
                 url=form.url.data,
@@ -47,8 +46,32 @@ def info_update():
             db.session.commit()
             return redirect(url_for('info_list'))
         else:
-            print("Fail")
             message = 'Invalid credentials'
-        return render_template('info_update.html', form=form, message=message)
-    return render_template('info_update.html', form=form)
+        return render_template('info_create.html', form=form, message=message)
+    return render_template('info_create.html', form=form)
 
+
+@app.route('/info/edit/<record_id>', methods=['GET', 'POST'])
+def info_edit(record_id):
+    form = InfoForm(request.form)
+    if record_id:
+        info = Information.query.get(record_id)
+
+    if request.method == 'POST' and form.validate():
+        passkey = form.passkey.data
+
+        if passkey == "123":
+            info.write_date = datetime.now()
+            info.sequence = form.sequence.data
+            info.passkey = form.passkey.data
+            info.url = form.url.data
+            info.title = form.title.data
+            info.preview = form.preview.data
+            info.content = form.content.data
+
+            db.session.commit()
+            return redirect(url_for('info_list'))
+        else:
+            message = 'Invalid credentials'
+        return render_template('info_create.html', form=form, message=message)
+    return render_template('info_edit.html', form=form, info=info)
