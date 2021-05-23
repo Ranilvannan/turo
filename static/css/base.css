@@ -45,3 +45,58 @@
   background-color: #4CAF50;
   color: white;
 }
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 33%;
+  border-radius: 5px;
+  margin: 0 0 16px 16px;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: scale(1.02);
+}
+
+.card-title {
+    color: #ffab40;
+}
+
+hr {
+    background-color: #ffab40;
+    height: 1.5px;
+}
+
+img {
+  border-radius: 10px 10px;
+  width: 100%;
+  height: 240px;
+}
+
+.container {
+    padding: 2px 16px;
+
+}
+
+body {
+    background-color: #d8f6df;
+}
+
+.b-white {
+    background-color: #fff;
+}
+
+.blog-info {
+  background-color: #28a74514;
+  padding: 3px;
+}
+
+.blog-link{
+  color: rgb(4, 160, 241);
+}
+
+.box-s {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

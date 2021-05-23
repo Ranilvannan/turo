@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container" style="margin-top:20px; margin-bottom:20px;">
+	<div class="row">
+		<div class="col-sm-8 pt-4">
+			<div class="article p-4 b-white box-s">
+				<div class="blog-title">
+					<h3>Python Programming tutorial</h3>
+				</div>
+
+				<div class="blog-last-update">
+					<p class="small">
+						<b class="text-success pr-2">Published On</b>
+						<i class="blog-info">published_on</i>
+						<strong>|</strong>
+						<b class="text-success pr-2">Category</b>
+						<a class="blog-info blog-link" href="#">story.category.name</a>
+					</p>
+				</div>
+				<img src="{{ url_for('custom_images', filename='first.jpg') }}">
+				<div class="blog-content pt-4">
+					<p>Set to launch on the manufacturer’s new A330neo aircraft in 2017, it’s offering lots of extra space, including wider seats as standard, no control boxes under seats for the in-flight entertainment system, which means it’s all open for you to stretch your legs.</p>
+					<p>Being able to stay connected with the ground below via Wi-Fi and now making calls and texts from 35,000 ft makes flying a less daunting experience for anyone who’s nervous. If it gets a little bumpy or you’re feeling anxious, you can now call your friend for a distraction or get lost on Twitter for a while.</p>
+					<p>Being able to stay connected with the ground below via Wi-Fi and now making calls and texts from 35,000 ft makes flying a less daunting experience for anyone who’s nervous. If it gets a little bumpy or you’re feeling anxious, you can now call your friend for a distraction or get lost on Twitter for a while.</p>
+					<p>Being able to stay connected with the ground below via Wi-Fi and now making calls and texts from 35,000 ft makes flying a less daunting experience for anyone who’s nervous. If it gets a little bumpy or you’re feeling anxious, you can now call your friend for a distraction or get lost on Twitter for a while.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4 pt-4">
+			<div class="article-category p-4 b-white box-s">
+				<div class="article-category-title">
+					<h4>Author</h4>
+				</div>
+				<div class="article-category-content">
+					<p>Set to launch on the manufacturer’s new A330neo aircraft in 2017, it’s offering lots of extra space, including wider seats as standard, no control boxes under seats for the in-flight entertainment system, which means it’s all open for you to stretch your legs.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
